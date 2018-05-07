@@ -7,12 +7,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 app.get('/topic/new', (req, res) => {
     res.render('form');
-})
+});
 app.get(['/topic/:id', '/topic'], (req, res) => {
     fs.readdir('data', (err, files) => {
         if (err) {
@@ -31,7 +31,7 @@ app.get(['/topic/:id', '/topic'], (req, res) => {
                     title: id,
                     con: data,
                 });
-            })
+            });
         }
         else {
             res.render('list', {
@@ -40,8 +40,8 @@ app.get(['/topic/:id', '/topic'], (req, res) => {
                 con: 'Welcome',
             });
         }
-    })
-})
+    });
+});
 
 app.post('/topic', (req, res) => {
     var title = req.body.title;
@@ -54,12 +54,12 @@ app.post('/topic', (req, res) => {
         console.log("Create");
         res.redirect('/topic/' + title);
     });
-})
+});
 
 app.get('/', (req, res) => {
     res.redirect('/topic');
-})
+});
 
 app.listen(2000, () => {
-    console.log('Start Server port: 3000')
-})
+    console.log('Start Server port: 3000');
+});
