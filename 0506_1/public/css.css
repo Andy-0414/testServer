@@ -1,0 +1,31 @@
+div.num{
+      transition: 1s;
+
+      text-align: center;
+      width: 7%;
+      height: auto;
+      padding-top: 2.5%;
+      padding-bottom: 3%;
+      background: #89d67c;
+
+      transition: 0.2s ease-out;
+
+      font-size: 300%;
+      color: white;
+
+      display: inline-block;
+
+      position: relative;
+}
+div.num:hover{
+      background: #9cf0a2;
+      box-shadow: 10px 10px 20px grey;
+      left: 0px;
+      top: 0px;
+}
+div.num:not(hover)
+{
+      box-shadow: 1px 1px 10px grey;
+      left: 10px;
+      top: 10px;
+}
