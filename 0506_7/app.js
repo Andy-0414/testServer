@@ -30,7 +30,6 @@ app.get(['/topic/:id', '/topic'], (req, res) => {
                     topics: files,
                     title: id,
                     con: data,
-                    dir: __dirname
                 });
             })
         }
@@ -39,7 +38,6 @@ app.get(['/topic/:id', '/topic'], (req, res) => {
                 topics: files,
                 title: 'Welcome',
                 con: 'Welcome',
-                dir: __dirname
             });
         }
     })
